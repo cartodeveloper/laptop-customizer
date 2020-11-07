@@ -1,6 +1,6 @@
 # Laptop Customizer
 
-## Refactor of a Laptop Customizer App using component-based organization<br>
+## Refactoing a laptop customizer app using component-based organization.<br>
 
 ## App Tree
 **App🔻** <br>
