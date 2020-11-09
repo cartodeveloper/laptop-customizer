@@ -1,40 +1,21 @@
 import React, { Component } from "react";
-import Options from "./Option";
+import FEATURES from "../STORE/Features";
 import Feature from "./Feature";
-import slugify from "slugify";
+import "../MainForm/Customizer.css";
 
 class Customizer extends Component {
+  state = {
+    features: FEATURES,
+  };
   render() {
-    const features = Object.keys(this.props.features).map((feature, idx) => {
-      const featureHash = feature + "-" + idx;
-      const options = this.props.features[feature].map((item) => {
-        const itemHash = slugify(JSON.stringify(item));
-        return (
-          <Options
-            selected={this.props.selected}
-            itemHash={itemHash}
-            feature={feature}
-            item={item}
-            key={item.name}
-            updateFeature={this.props.updateFeature}
-          />
-        );
-      });
-
-      return (
-        <Feature
-          key={idx}
-          feature={feature}
-          options={options}
-          featureHash={featureHash}
-        />
-      );
-    });
-
     return (
       <form className="main__form">
         <h2>Customize your laptop</h2>
-        {features}
+        <Feature
+          features={this.state.features}
+          selected={this.props.selected}
+          updateFeature={this.props.updateFeature}
+        />
       </form>
     );
   }

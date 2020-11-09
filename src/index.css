@@ -2,10 +2,20 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+.main__summary {
+  border: 3px solid lightseagreen;
+}
+.summary__option {
+  border: 2px solid lightgreen;
+}
+.summary__total {
+  border: 2px solid yellow;
 }
 
 body {
